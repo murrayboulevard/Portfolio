@@ -1,4 +1,3 @@
-/****** Script for SelectTopNRows command from SSMS  ******/
 SELECT TOP (1000) 
 	   [ride_id]
       ,[rideable_type]
@@ -19,7 +18,7 @@ SELECT TOP (1000)
 
 --------------------------------------------------------
 
--- Calculating the avereage ride_length per member type
+-- Calculating the avereage ride_length per MEMBER type
 
 SELECT
 	member_casual,
@@ -29,7 +28,7 @@ FROM
 GROUP BY
 	member_casual
 
--- Calculating ride_length itself is even more simple
+-- Calculating ride_length
 
 SELECT 
 	CAST((ended_at - started_at) AS float) AS ride_length
@@ -39,7 +38,7 @@ FROM
 
 --------------------------------------------------------
 
--- Calculating the avereage ride_length per day of the month
+-- Calculating the avereage ride_length per DAY of the MONTH
 
 SELECT
 	DAY(started_at) AS day_of_month,
